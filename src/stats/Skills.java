@@ -1,8 +1,8 @@
-import java.lang.reflect.Array;
+package stats;
 
 public class Skills {
-    private static int skills [] = new int[16];
-    private static String [] skillNames = {"Kraft"
+    private int[] skills = new int[16];
+    private final String [] skillNames = {"Kraft"
             , "Ausdauer"
             , "Nahkampf"
             , "Handwerk"
@@ -19,18 +19,21 @@ public class Skills {
             , "Heilen"
             , "Tierkunde"};
 
-    public Skills(int [] skills) {
-        this.skills = skills;
-        Main.Char[4] = skillTree();
+    public Skills() {
     }
 
-    private static String skillTree () {
+    private String skillTree () {
         String result = "Deine Fertigkeiten sind:";
         for(int i = 0; i < 16; i++ ) {
-            result = result + "\n "+ skillNames [i] + " " + skills[i];
+            result = result + "\n "+ this.skillNames[i] + " " + this.skills[i];
         }
         return result;
     }
+
+    public void setSkills(int[] skills) {
+        this.skills = skills;
+    }
+
 
     /*
     * 0 Kraft
