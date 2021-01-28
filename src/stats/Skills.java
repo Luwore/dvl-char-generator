@@ -20,14 +20,21 @@ public class Skills {
             , "Tierkunde"};
 
     public Skills() {
+        setDefaultSkills();
     }
 
-    private String skillTree () {
+    public String skillTree () {
         String result = "Deine Fertigkeiten sind:";
         for(int i = 0; i < 16; i++ ) {
             result = result + "\n "+ this.skillNames[i] + " " + this.skills[i];
         }
         return result;
+    }
+
+    private void setDefaultSkills() {
+        for (int i = 0; i < 16; i++) {
+            skills [1] = 0;
+        }
     }
 
     public void setSkills(int[] skills) {

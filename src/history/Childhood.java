@@ -7,16 +7,18 @@ import stats.Skills;
 
 public class Childhood {
     public String childhood;
-    private String raceName;
-    private int[] skill;
+    private int[] skill = new int[16];
 
-    public Childhood(final Skills skills) {
+    public Childhood(final Skills skills, String raceName) {
+        setDefaultSkills();
+        generateChildhood(raceName);
         skills.setSkills(this.skill);
+
     }
 
-    public void childhood() {
+    private void generateChildhood(String raceName) {
         final int d = DiceRoller.d6(1);
-        if (this.raceName == "Erlenländer (Mensch)") {
+        if (raceName == "Erlenländer (Mensch)") {
             switch (d) {
                 case 1:
                     this.childhood = "Weise";
@@ -78,7 +80,7 @@ public class Childhood {
                     //Skills harteLehrjahreS = new Skills(skill);
                     break;
             }
-        } else if (this.raceName == "Aslene (Mensch)") {
+        } else if (raceName == "Aslene (Mensch)") {
             switch (d) {
                 case 1:
                     this.childhood = "Im Sattel geboren";
@@ -135,7 +137,7 @@ public class Childhood {
                     //Skills kindDerWindeS = new Skills(skill);
                     break;
             }
-        } else if (this.raceName == "Ailander (Mensch)") {
+        } else if (raceName == "Ailander (Mensch)") {
             switch (d) {
                 case 1:
                     this.childhood = "Kind des Raben";
@@ -197,7 +199,7 @@ public class Childhood {
                     break;
             }
 
-        } else if (this.raceName == "Halbelf") {
+        } else if (raceName == "Halbelf") {
             switch (d) {
                 case 1:
                     this.childhood = "Auf der Flucht";
@@ -255,7 +257,7 @@ public class Childhood {
                     break;
             }
 
-        } else if (this.raceName == "Halbling") {
+        } else if (raceName == "Halbling") {
             switch (d) {
                 case 1:
                     this.childhood = "Bäckerlehrling";
@@ -316,7 +318,7 @@ public class Childhood {
                     //Skills einzelgängerS = new Skills(skill);
                     break;
             }
-        } else if (this.raceName == "Goblin") {
+        } else if (raceName == "Goblin") {
             switch (d) {
                 case 1:
                     this.childhood = "Wolfling";
@@ -375,7 +377,7 @@ public class Childhood {
                     //Skills geschichtenerzählerS = new Skills(skill);
                     break;
             }
-        } else if (this.raceName == "Ork") {
+        } else if (raceName == "Ork") {
             switch (d) {
                 case 1:
                     this.childhood = "Barde";
@@ -433,7 +435,7 @@ public class Childhood {
                     //Skills einzelgängerS = new Skills(skill);
                     break;
             }
-        } else if (this.raceName == "Wolfsmensch") {
+        } else if (raceName == "Wolfsmensch") {
             switch (d) {
                 case 1:
                     this.childhood = "Heuler";
@@ -487,7 +489,7 @@ public class Childhood {
                     //Skills kindDesWaldesS = new Skills(skill);
                     break;
             }
-        } else if (this.raceName == "Zwerg") {
+        } else if (raceName == "Zwerg") {
             switch (d) {
                 case 1:
                     this.childhood = "Schmiedelehrling";
@@ -544,7 +546,7 @@ public class Childhood {
                     //Skills harteLehrjahreS = new Skills(skill);
                     break;
             }
-        } else if (this.raceName == "Elf") {
+        } else if (raceName == "Elf") {
             switch (d) {
                 case 1:
                     this.childhood = "Einzelgänger";
@@ -604,6 +606,16 @@ public class Childhood {
             }
         } else {
             System.out.println("Fehler!!!");
+        }
+    }
+
+    public String getChildhood() {
+        return this.childhood;
+    }
+
+    private void setDefaultSkills() {
+        for (int i = 0; i < 16; i++) {
+            skill[1] = 0;
         }
     }
 }

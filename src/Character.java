@@ -17,11 +17,11 @@ public class Character {
         this.skills = new Skills();
         this.race = new Race();
         this.homeregion = new Homeregion(this.race.getRaceInt());
-        this.childhood = new Childhood(this.skills);
+        this.childhood = new Childhood(this.skills, race.getRaceName());
 
     }
 
     public void printChar() {
-        System.out.println(race.getRaceName() +"; " + homeregion.getHomeregion());
+        System.out.println(race.getRaceName() +"; " + homeregion.getHomeregion() + "; " + childhood.getChildhood());
     }
 }
