@@ -19,4 +19,14 @@ public class DiceRoller {
         final Random r = new Random();
         return r.nextInt(diceAmount * 8) + 1;
     }
+
+    public static int d4(final int diceAmount){
+        final Random r = new Random();
+        return r.nextInt(diceAmount * 4) + 1;
+    }
+
+    public static int d3(final int diceAmount){
+        final Random r = new Random();
+        return r.nextInt(diceAmount * 3) + 1;
+    }
 }

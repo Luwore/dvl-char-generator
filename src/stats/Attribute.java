@@ -13,10 +13,18 @@ public class Attribute {
         this.empathie = empathie;
     }
 
-    public void printAttributes() {
-        final String attributes =
-            "  Stärke " + this.stärke + "\n  Geschicklichkeit " + this.geschicklichkeit + "\n  Verstand " + this.verstand +
+    public String printAttributes() {
+        final String attributes = "Deine Attribute sind: \n" +
+                "  Stärke " + this.stärke + "\n  Geschicklichkeit " + this.geschicklichkeit + "\n  Verstand " + this.verstand +
                 "\n  Empathie " + this.empathie;
+        return attributes;
+    }
+
+    public void setAttributes(Attribute attributes) {
+        this.stärke = attributes.getStärke();
+        this.geschicklichkeit = attributes.getGeschicklichkeit();
+        this.verstand = attributes.getVerstand();
+        this.empathie = attributes.getEmpathie();
     }
 
     public int getStärke() {

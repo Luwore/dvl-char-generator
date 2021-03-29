@@ -26,7 +26,7 @@ public class Skills {
     public String skillTree () {
         String result = "Deine Fertigkeiten sind:";
         for(int i = 0; i < 16; i++ ) {
-            result = result + "\n "+ this.skillNames[i] + " " + this.skills[i];
+            result = result + "\n  "+ this.skillNames[i] + " " + this.skills[i];
         }
         return result;
     }
@@ -35,6 +35,10 @@ public class Skills {
         for (int i = 0; i < 16; i++) {
             skills [1] = 0;
         }
+    }
+
+    public void addSkills(int skillNumber, int amount) {
+        skills[skillNumber] += amount;
     }
 
     public void setSkills(int[] skills) {

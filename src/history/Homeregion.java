@@ -14,7 +14,7 @@ public class Homeregion {
 
     private void generateHomeregionArray() {
         //Erländer
-        this.heimatregion[0] [0] = "Am Randedes Arinawaldes";
+        this.heimatregion[0] [0] = "Am Rande des Arinawaldes";
         this.heimatregion[0] [1] = "Die Ebenen von Moldena";
         this.heimatregion[0] [2] = "Die Ebenen von Moldena";
         this.heimatregion[0] [3] = "Die Ufer vom Varda-See";
